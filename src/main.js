@@ -1,6 +1,9 @@
 import {createApp} from 'vue';
 import {createRouter, createWebHistory} from 'vue-router';
 
+// application
+import App from './App.vue'
+
 // component
 import Home from './components/Home.vue'
 import AppService from './services/Application.ts'
