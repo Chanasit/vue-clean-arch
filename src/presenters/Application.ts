@@ -8,7 +8,7 @@ class AppViewModel {
 interface IAppPresenter {
     view: AppViewModel
     onMounted(): any
-    onDestroy(): any
+    onUnmounted(): any
     getNotify(): boolean
 }
 
@@ -26,7 +26,7 @@ export default class AppPresenter implements IAppPresenter {
     onMounted() {
         throw new Error("Method not implemented.")
     }
-    onDestroy() {
+    onUnmounted() {
         throw new Error("Method not implemented.")
     }
     getNotify(): boolean {

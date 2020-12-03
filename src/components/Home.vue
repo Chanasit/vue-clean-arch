@@ -12,8 +12,8 @@ export default {
   mounted() {
     this.$presenter.app.onMounted();
   },
-  destroyed() {
-    this.$presenter.app.onDestroy();
+  unmounted() {
+    this.$presenter.app.onMounted();
   },
 };
 </script>
