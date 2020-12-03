@@ -6,7 +6,6 @@ import App from './App.vue'
 
 // component
 import Home from './components/Home.vue'
-import {AppService} from './services/Application.ts'
 
 // router
 const routes = [
@@ -17,10 +16,14 @@ const router = createRouter({
 	routes, // short for `routes: routes`
 })
 
+// repositories
 import {AppHttpClient} from './repositories/httpclients/Application'
 
+// services
+import {AppService} from './services/Application'
+
 // presenter
-import {AppPresenter} from './presenters/Application.ts'
+import {AppPresenter} from './presenters/Application'
 const presenter = {
 	app: new AppPresenter(new AppService(new AppHttpClient()))
 }
