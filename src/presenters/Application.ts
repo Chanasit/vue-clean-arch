@@ -1,3 +1,5 @@
+import { IAppService } from '../services/Application'
+
 class AppViewModel {
     name: string
     notify: boolean
@@ -5,18 +7,20 @@ class AppViewModel {
     account_name: string
 }
 
-interface IAppPresenter {
+export interface IAppPresenter {
     view: AppViewModel
     onMounted(): any
     onUnmounted(): any
-    getNotify(): boolean
+    getApplicationNotify(): void
 }
 
-export default class AppPresenter implements IAppPresenter {
+export class AppPresenter implements IAppPresenter {
 
     public view: AppViewModel
 
-    constructor() {
+    constructor(
+			private appService: IAppService
+		) {
         this.view = new AppViewModel()
         this.view.name = "mock name"
         this.view.notify = false
@@ -29,7 +33,7 @@ export default class AppPresenter implements IAppPresenter {
     onUnmounted() {
         throw new Error("Method not implemented.")
     }
-    getNotify(): boolean {
-        throw new Error("Method not implemented.")
+    getApplicationNotify(): void {
+				this.appService.getApplicationNotify()
     }
 }

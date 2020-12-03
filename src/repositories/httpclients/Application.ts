@@ -2,13 +2,13 @@ import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { ajax } from 'rxjs/ajax'
 
-interface IAppHttpClient {
+export interface IAppHttpClient {
     getGithubUser(): Observable<string>
     getCategory(): any
     getNotification(): any
 }
 
-export default class AppHttpClient implements IAppHttpClient {
+export class AppHttpClient implements IAppHttpClient {
 
     constructor() { }
 

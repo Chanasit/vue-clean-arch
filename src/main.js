@@ -1,30 +1,30 @@
-import {createApp} from 'vue';
-import {createRouter, createWebHistory} from 'vue-router';
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 // application
 import App from './App.vue'
 
 // component
 import Home from './components/Home.vue'
-import AppService from './services/Application.ts'
+import { AppService } from './services/Application.ts'
 
 // router
 const routes = [
-	{path: '/', component: Home},
+    { path: '/', component: Home },
 ]
 const router = createRouter({
-	history: createWebHistory(),
-	routes, // short for `routes: routes`
+    history: createWebHistory(),
+    routes, // short for `routes: routes`
 })
 
 // presenter
-import AppPresenter from './presenters/Application.ts'
+import { AppPresenter } from './presenters/Application.ts'
 const presenter = {
-	app: new AppPresenter(new AppService())
+    app: new AppPresenter(new AppService())
 }
 
 // appplication
 createApp(App)
-	.provide("$presenter", presenter)
-	.use(router)
-	.mount('#app')
+    .provide("$presenter", presenter)
+    .use(router)
+    .mount('#app')

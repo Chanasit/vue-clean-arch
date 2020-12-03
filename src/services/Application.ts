@@ -1,6 +1,10 @@
-interface IAppService {
+export interface IAppService {
+    getApplicationNotify(): string
 }
 
-export default class AppService implements IAppService {
-	constructor() {}
+export class AppService implements IAppService {
+    constructor() { }
+    getApplicationNotify(): string {
+        throw new Error("Method not implemented.");
+    }
 }
