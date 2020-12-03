@@ -1,10 +1,16 @@
+import {Observable} from 'rxjs';
+import {IAppHttpClient} from '../repositories/httpclients/Application'
+
 export interface IAppService {
-    getApplicationNotify(): string
+	getGithubUserProfile(): Observable<string>
 }
 
 export class AppService implements IAppService {
-    constructor() { }
-    getApplicationNotify(): string {
-        throw new Error("Method not implemented.");
-    }
+	constructor(
+		private appHttpClient: IAppHttpClient
+	) {}
+
+	getGithubUserProfile(): Observable<string> {
+		return this.appHttpClient.getGithubUserProfile()
+	}
 }

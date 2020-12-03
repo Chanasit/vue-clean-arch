@@ -2,7 +2,6 @@
   <div class="container">
     <main class="d-flex flex-column">
       <router-view></router-view>
-      <div>{{ view.notify }} {{ view.account_name }} {{ view.account_id }}</div>
     </main>
   </div>
 </template>

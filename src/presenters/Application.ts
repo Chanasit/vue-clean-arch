@@ -11,7 +11,6 @@ export interface IAppPresenter {
     view: AppViewModel
     onMounted(): any
     onUnmounted(): any
-    getApplicationNotify(): void
 }
 
 export class AppPresenter implements IAppPresenter {
@@ -28,12 +27,11 @@ export class AppPresenter implements IAppPresenter {
         this.view.account_id = "mock account id"
     }
     onMounted() {
-        throw new Error("Method not implemented.")
+			this.appService.getGithubUserProfile().subscribe(
+				n => {console.log(n)}
+			)
     }
     onUnmounted() {
         throw new Error("Method not implemented.")
-    }
-    getApplicationNotify(): void {
-				this.appService.getApplicationNotify()
     }
 }

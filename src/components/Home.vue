@@ -1,5 +1,6 @@
 <template>
   <p>Home Component</p>
+  <div>{{ view.notify }} {{ view.account_name }} {{ view.account_id }}</div>
 </template>
 
 <script>
