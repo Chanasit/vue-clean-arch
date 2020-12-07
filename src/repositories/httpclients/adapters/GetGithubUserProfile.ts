@@ -29,7 +29,7 @@ export class GetGithubUserProfileAdapter implements Adapter<GetGithubUserProfile
 
 		let listDAO: GetGithubUserProfileDAO[] = []
 
-		r.map( (it: GetGithubUserProfileDAO) => {
+		r.map((it: GetGithubUserProfileDAO) => {
 			let dao = new GetGithubUserProfileDAO()
 			dao.login = it.login
 			dao.site_admin = it.site_admin
