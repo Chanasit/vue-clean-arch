@@ -23,11 +23,11 @@ export class GetGithubUserProfileDAO {
 	site_admin: boolean
 }
 
-export class GetGithubUserProfileAdapter implements Adapter<Array<GetGithubUserProfileDAO>> {
+export class GetGithubUserProfileAdapter implements Adapter<GetGithubUserProfileDAO[]> {
 
-	adapt(r: any): Array<GetGithubUserProfileDAO> {
-		console.log(r)
-		let listDAO = new Array<GetGithubUserProfileDAO>()
+	adapt(r: any): GetGithubUserProfileDAO[] {
+
+		let listDAO: GetGithubUserProfileDAO[] = []
 
 		r.map( (it: GetGithubUserProfileDAO) => {
 			let dao = new GetGithubUserProfileDAO()
