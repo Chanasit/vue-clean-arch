@@ -8,16 +8,14 @@
 
 <script>
 export default {
-  name: "App",
+  name: "Application",
   inject: ["$presenter"],
   data() {
-    return { view: this.$presenter.app.view };
+    return { view: null };
   },
   mounted() {
-    this.$presenter.app.onMounted();
   },
   unmounted() {
-    this.$presenter.app.onUnmounted();
   },
 };
 </script>
